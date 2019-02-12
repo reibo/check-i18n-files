@@ -6,13 +6,15 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "typeRoots": ["node_modules/@types"],
-    "lib": ["es2017", "dom"],
+    "lib": [
+      "es2017","es2015","dom","es6"
+    ],
     "baseUrl": "./src",
-    "target": "es2018",
+    "target": "es5",
     "module": "commonjs",
     "strict": false,
     "outDir": "./dist/",
-    "sourceMap": true,
+    "sourceMap": false,
     "moduleResolution": "node"
   },
   "exclude": ["dist", "node_modules"]

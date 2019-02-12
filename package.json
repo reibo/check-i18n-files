@@ -9,7 +9,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc  ",
-    "start": "npm run build && node dist/index.js ./demo"
+    "patch-release": "npm version patch && npm publish && git push --follow-tags",
+    "start": "npm run build && node dist/index.js -d ./demo"
   },
   "author": "Bo Vandersteene",
   "license": "ISC",
@@ -17,7 +18,8 @@
     "typescript": "^3.3.3"
   },
   "dependencies": {
-    "@types/node": "^11.9.0"
+    "@types/node": "^11.9.0",
+    "commander": "^2.19.0"
   },
   "bin": {
     "check-i18n-files": "./index.js"

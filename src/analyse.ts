@@ -2,10 +2,6 @@ import * as fs from "fs";
 import {TranslateKey, Value} from "./translate.model";
 
 export function analyze(path: string) {
-    if (!path) {
-        console.error('path not provided');
-        return;
-    }
     const translateValues: Array<TranslateKey> = [];
     const i18nFiles: Array<string> = [];
 
@@ -40,7 +36,7 @@ export function analyze(path: string) {
 
     const files = fs.readdirSync(path);
 
-    files.forEach(readFile);
+    files.filter(file => file.indexOf('json') > 0).forEach(readFile);
 
     console.debug(`analyze done ...`);
     return {i18n: i18nFiles, translateValues};
