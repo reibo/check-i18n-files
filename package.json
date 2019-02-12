@@ -20,6 +20,6 @@
     "@types/node": "^11.9.0"
   },
   "bin": {
-    "check-i18n-files": "node ./index.js"
+    "check-i18n-files": "./index.js"
   }
 }
