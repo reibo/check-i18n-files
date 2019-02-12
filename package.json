@@ -1,6 +1,6 @@
 {
   "name": "@reibo/check-i18n-files",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Check i18n files if they are all the same",
   "main": "index.js",
   "directories": {
