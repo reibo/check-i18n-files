@@ -62,7 +62,7 @@ jobs:
       - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
       - run:
           name: pre-publish
-          command: cp README.md dist/README.md
+          command: cp README.md dist/  && cp package.json dist/
       - run:
           name: publish
           command: npm publish --access=public --registry=https://registry.npmjs.org/ --folder dist
