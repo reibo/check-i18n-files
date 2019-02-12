@@ -22,8 +22,16 @@ Get it from npm
 ```
 npm i -D @reibo/check-i18n-files
 ```
-
+## Use
 Add a scripts step to your package.json
 ```
-check-i18n-files i18nDir
+check-i18n-files -d Directory 
 ```
+
+## arguments
+Arguments that can be passed
+ 
+| Argument      | What it does                                       |
+| ------------- |----------------------------------------------------|
+|-d or --dir    | The directory containing the translation json files|
+|-c or --csv    | Create a csv out of the translated files           |
