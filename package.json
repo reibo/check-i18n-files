@@ -1,0 +1,25 @@
+{
+  "name": "@reibo/check-i18n-files",
+  "version": "1.0.0",
+  "description": "Check i18n files if they are all the same",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc  ",
+    "start": "npm run build && node dist/index.js ./demo"
+  },
+  "author": "Bo Vandersteene",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^3.3.3"
+  },
+  "dependencies": {
+    "@types/node": "^11.9.0"
+  },
+  "bin": {
+    "check-i18n-files": "node ./index.js"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "title": "nl",
+  "hello": {
+    "world": "Hello world"
+  },
+  "deep": {
+    "lev1": {
+      "lev2": {
+        "lev3": {
+          "subtext": "",
+          "lev4": {
+            "level": "Hello world"
+          }
+        }
+      }
+    }
+  },
+  "only NL": "Only nl"
+}
