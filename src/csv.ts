@@ -14,7 +14,7 @@ export function toCsv(path: string, i18n: Array<string>, translateValues: Array<
     translateValues.forEach(value => {
         file.write([value.key, ...i18n.map(i => {
             const val = value.values.find(v => v.i18n === i);
-            return val ? 'val.value' : '';
+            return val ? `"${val.value}"` : '';
         })].join(seperator));
         file.write('\n');
     });
