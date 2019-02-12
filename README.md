@@ -23,4 +23,7 @@ Get it from npm
 npm i -D @reibo/check-i18n-files
 ```
 
-Add a buil
+Add a scripts step to your package.json
+```
+check-i18n-files i18nDir
+```

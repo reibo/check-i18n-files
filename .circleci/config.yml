@@ -49,7 +49,7 @@ jobs:
           name: Save build
           key: build-{{ .Revision }}
           paths:
-            - dist/ngx-chartjs
+            - dist/
 
   prod-publish:
     <<: *defaults
