@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc  ",
     "patch-release": "npm version patch && git push --follow-tags",
-    "start": "npm run build && node dist/index.js -d ./demo"
+    "start": "npm run build && node dist/index.js -d ./demo -r"
   },
   "author": "Bo Vandersteene",
   "license": "ISC",

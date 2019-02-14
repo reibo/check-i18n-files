@@ -22,10 +22,24 @@ Get it from npm
 ```
 npm i -D @reibo/check-i18n-files
 ```
-## Use
-Add a scripts step to your package.json
+## Analyze your json files
+This will generate a report in the command line
 ```
 check-i18n-files -d Directory 
+```
+## Write to a csv file
+
+This will write the values to a csv file
+```
+check-i18n-files -d Directory -c
+```
+The name of the generated file is i18n
+
+## Read and save to json files
+This will read a csv file and save them to the according values
+The name of the file to read is i18n.
+```
+check-i18n-files -d Directory -r
 ```
 
 ## arguments
@@ -35,3 +49,4 @@ Arguments that can be passed
 | ------------- |----------------------------------------------------|
 |-d or --dir    | The directory containing the translation json files|
 |-c or --csv    | Create a csv out of the translated files           |
+|-r or --read   | Read the csv and write to json files               |

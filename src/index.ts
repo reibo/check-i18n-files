@@ -2,7 +2,7 @@
 import * as program from 'commander';
 import {analyze} from "./analyse";
 import {printValues} from "./print";
-import {toCsv} from "./csv";
+import {readCsv, toCsv} from "./csv";
 import {printLogo} from "./logo";
 
 [
@@ -11,13 +11,14 @@ import {printLogo} from "./logo";
     ['error', '\x1b[31m'],
     ['log', '\x1b[32m'],
     ['info', '\x1b[24m']
-].forEach( pair  => {
+].forEach(pair => {
     const method = pair[0], color = '\x1b[36m' + pair[1];
     console[method] = console[method].bind(console, color);
 });
 
 program.version('1.0.2')
     .option('-d --dir [type]', 'Add directory')
+    .option('-r --read', 'Read csv')
     .option('-c --csv', 'Export to csv')
     .parse(process.argv);
 
@@ -28,6 +29,10 @@ if (!program.dir) {
 
 console.log('Analyze is started, by');
 printLogo();
+
+if (program.read) {
+    readCsv(program.dir);
+}
 const values = analyze(program.dir);
 printValues(values.i18n, values.translateValues);
 if (program.csv)
