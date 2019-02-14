@@ -18,8 +18,9 @@ import {printLogo} from "./logo";
 
 program.version('1.0.2')
     .option('-d --dir [type]', 'Add directory')
-    .option('-r --read', 'Read csv')
-    .option('-c --csv', 'Export to csv')
+    .option('-w --write', 'Read csv and write to json files')
+    .option('-c --csv ', 'Export to csv')
+    .option('-s --seperator [type]', 'Seperator for csv')
     .parse(process.argv);
 
 if (!program.dir) {
@@ -31,9 +32,9 @@ console.log('Analyze is started, by');
 printLogo();
 
 if (program.read) {
-    readCsv(program.dir);
+    readCsv(program.dir, program.seperator);
 }
 const values = analyze(program.dir);
 printValues(values.i18n, values.translateValues);
 if (program.csv)
-    toCsv(program.dir, values.i18n, values.translateValues);
+    toCsv(program.dir, values.i18n, values.translateValues, program.seperator);
