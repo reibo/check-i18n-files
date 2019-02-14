@@ -49,5 +49,5 @@ Arguments that can be passed
 | ------------------ |----------------------------------------------------|
 |-d or --dir         | The directory containing the translation json files|
 |-c or --csv         | Create a csv out of the translated files           |
-|-r or --read        | Read the csv and write to json files               |
+|-w or --write       | Read the csv and write to json files               |
 |-s or --seperator   | Seperator for the csv files, by default ','        |
