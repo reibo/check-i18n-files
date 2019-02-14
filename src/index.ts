@@ -31,7 +31,7 @@ if (!program.dir) {
 console.log('Analyze is started, by');
 printLogo();
 
-if (program.read) {
+if (program.write) {
     readCsv(program.dir, program.seperator);
 }
 const values = analyze(program.dir);
