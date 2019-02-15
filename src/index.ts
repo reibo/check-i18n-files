@@ -35,6 +35,6 @@ if (program.write) {
     readCsv(program.dir, program.seperator);
 }
 const values = analyze(program.dir);
-//printValues(values.i18n, values.translateValues);
+printValues(values.i18n, values.translateValues);
 if (program.csv)
     toCsv(program.dir, values.i18n, values.translateValues, program.seperator);
