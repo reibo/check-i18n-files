@@ -30,7 +30,7 @@ export function splitLine(line: string) {
     result.push(line.substring(prevComma).replace(/"/g, ''));
     if (i === maxGoThrough) {
         console.warn('ERROR');
-       // console.warn('\t', line)
+        // console.warn('\t', line)
         //console.warn('\t', result.join(';'));
     }
     return result;
@@ -47,7 +47,7 @@ export function toCsv(path: string, i18n: Array<string>, translateValues: Array<
     translateValues.forEach(value => {
         file.write([value.key, ...i18n.map(i => {
             const val = value.values.find(v => v.i18n === i);
-            return val ? `"${val.value}"` : '';
+            return val ? `"${val.value}"` : '""';
         })].join(seperator));
         file.write('\n');
     });
@@ -65,11 +65,11 @@ export function readCsv(path: string, seperator: string = ',') {
 
     const lines = file.split(/\r\n|\r|\n/);
 
-    const i18n = lines.shift().split(seperator);
+    const i18n = lines.shift().split(seperator)//.sort((l1, l2) => l1 < l2 ? -1 : 1);
     i18n.shift();
 
     const fileText = i18n.map(() => ({}));
-    lines.forEach(l => {
+    lines.sort((l1, l2) => l1 < l2 ? -1 : 1).forEach(l => {
         if (l && l.length) {
             const line = splitLine(l);
             const key = line[0];
